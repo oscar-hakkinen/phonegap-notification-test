@@ -3,7 +3,7 @@ var notification_count=0;
 $(document).on('pageinit', function() {
 
 	$('#messageButton').on('click', function() {
-		createMessage();
+		createMessage('Hello ther', 3000);
 	});
 	
 	$('#dialogButton').on('click', function() {
@@ -19,12 +19,11 @@ $(document).on('pageinit', function() {
 });
 
 
-
-function createMessage(){		
+function createMessage(text, time){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js
-    new Toast({content: 'An example message.', duration: 3000}); 	
-    new Toast({content: 'Halo there', duration: 3000}); 	
+   
+    new Toast({content: text , duration: time}); 	
 }
         	
 
@@ -46,8 +45,8 @@ function createDialog() {
         	
 function dialogDismissed(buttonIndex) {
 	
-	if(buttonIndex==1) new Toast({content: "you eat nao!", duration: 3000});
-   	else if(buttonIndex==2) new Toast({content: 'You work work no slackie', duration: 3000});
+	if(buttonIndex==1) createMessage("you eat nao!", duration: 3000);
+   	else if(buttonIndex==2) createMessage('You work work no slackie', duration: 3000);
 
 }
 
@@ -59,7 +58,7 @@ function createNotification() {
     //generate a time to post notification
     //
     var currentTime = new Date().getTime(); //current time
-    var notificationTime = new Date(currentTime + 30000); //delayed time  - add 1 second
+    var notificationTime = new Date(currentTime + 3000); //delayed time  - add 1 second
     			
     //
     //setup notification
