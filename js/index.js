@@ -45,8 +45,8 @@ function createDialog() {
         	
 function dialogDismissed(buttonIndex) {
 	
-	if(buttonIndex==1) createMessage("you eat nao!", duration: 3000);
-   	else if(buttonIndex==2) createMessage('You work work no slackie', duration: 3000);
+	if(buttonIndex==1) createMessage('you eat nao!', 3000);
+   	else if(buttonIndex==2) createMessage('You work work no slackie', 3000);
 
 }
 
